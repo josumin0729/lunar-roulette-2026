@@ -1,14 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 세뱃돈 룰렛 💰✨</title>
+    <title>2026 세뱃돈 룰렛 🧧</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- Amplitude Analytics -->
-      
+    <!-- SUIT 폰트 -->
+    <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    
     <!-- Amplitude Analytics (최신 버전) -->
     <script type="text/javascript">
         !function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{r.invoked=!0;var n=t.createElement("script");n.type="text/javascript",n.integrity="sha384-x0895mPlngKeVz8CmWcDNevY8JCIcHjrtVvkLF8VhXbKcXz1YXa+aCWpKLvhd5Qs",n.crossOrigin="anonymous",n.async=!0,n.src="https://cdn.amplitude.com/libs/analytics-browser-2.11.0-min.js.gz",n.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var s=t.getElementsByTagName("script")[0];s.parentNode.insertBefore(n,s);for(var o=function(){return this._q=[],this},i=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],a=0;a<i.length;a++)o.prototype[i[a]]=function(e){return function(){return this._q.push({name:e,args:Array.prototype.slice.call(arguments,0)}),this}}(i[a]);r.Identify=o;var c=function(){return this._q=[],this},u=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"];for(a=0;a<u.length;a++)c.prototype[u[a]]=function(e){return function(){return this._q.push({name:e,args:Array.prototype.slice.call(arguments,0)}),this}}(u[a]);r.Revenue=c;var l=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"];for(a=0;a<l.length;a++)!function(e){r[e]=function(){r._q.push({name:e,args:Array.prototype.slice.call(arguments,0)})}}(l[a]);r.getInstance=function(e){return e=(e&&0!==e.length?e:"$default_instance").toLowerCase(),Object.prototype.hasOwnProperty.call(r._iq,e)||(r._iq[e]={_q:[]},function(e){for(var t=0;t<l.length;t++)!function(t){e[t]=function(){e._q.push({name:t,args:Array.prototype.slice.call(arguments,0)})}}(l[t])}(r._iq[e])),r._iq[e]},e.amplitude=r}}(window,document);
@@ -26,64 +26,53 @@
 </head>
 <body>
     <div class="container">
-        <!-- 시작 화면 -->
-        <div id="startScreen" class="screen active">
-            <div class="header">
-                <h1 class="title">2026 설날 💰✨</h1>
-                <h2 class="subtitle">세뱃돈 룰렛</h2>
-            </div>
-            <p class="desc">올해 받을 세뱃돈은 얼마?<br>친척 어른들께 보여드리세요!</p>
-            <button id="startBtn" class="btn-primary">룰렛 돌리기 🎰</button>
+        <!-- 상단 타이틀 -->
+        <div class="header">
+            <h1 class="title">2026 설날 🧧</h1>
+            <h2 class="subtitle">세뱃돈 룰렛</h2>
+            <p class="desc">올해 받을 세뱃돈은 얼마? <br> 친척어른께 보여드리세요!</p>
         </div>
 
-        <!-- 룰렛 화면 -->
-        <div id="rouletteScreen" class="screen">
-            <div class="roulette-container">
-                <div class="roulette-wrapper">
-                    <div id="roulette" class="roulette">
-                        <div class="slice slice-1" data-amount="5000">
-                            <span>5천福✨</span>
-                        </div>
-                        <div class="slice slice-2" data-amount="10000">
-                            <span>1만 福✨</span>
-                        </div>
-                        <div class="slice slice-3" data-amount="30000">
-                            <span>3만 福✨</span>
-                        </div>
-                        <div class="slice slice-4" data-amount="50000">
-                            <span>5만 福✨</span>
-                        </div>
-                        <div class="slice slice-5" data-amount="100000">
-                            <span>10만 福✨</span>
-                        </div>
-                        <div class="slice slice-6" data-amount="500000">
-                            <span>50만 福✨</span>
-                        </div>
-                    </div>
-                    <div class="pointer">▼</div>
+        <!-- 룰렛 -->
+        <div class="roulette-wrapper">
+            <div id="roulette" class="roulette">
+                <div class="slice slice-1">
+                    <span>5천福✨</span>
+                </div>
+                <div class="slice slice-2">
+                    <span>1만福✨</span>
+                </div>
+                <div class="slice slice-3">
+                    <span>3만福✨</span>
+                </div>
+                <div class="slice slice-4">
+                    <span>5만福✨</span>
+                </div>
+                <div class="slice slice-5">
+                    <span>10만福✨</span>
+                </div>
+                <div class="slice slice-6">
+                    <span>50만福✨</span>
                 </div>
             </div>
-            <p class="spinning-text">빙글빙글...</p>
+            <div class="pointer">▼</div>
         </div>
 
-        <!-- 결과 화면 -->
-        <div id="resultScreen" class="screen">
+        <!-- 돌리기 버튼 -->
+        <button id="spinBtn" class="btn-spin">돌리기 🎰</button>
+
+        <!-- 결과 영역 (처음엔 숨김) -->
+        <div id="resultArea" class="result-area hidden">
             <div class="result-box">
-                <p class="result-label">올해 세뱃돈은</p>
-                <h1 id="resultAmount" class="result-amount">50,000福✨</h1>
-                <p id="resultMessage" class="result-message">이 화면을 보여드리는 건 제 진심입니다✨ 🙏 <br>(자본주의적 진심) </p>
-                <p class="result-sub">이 화면을 지갑 주인님께 보여드리세요!</p>
+                <h1 id="resultAmount" class="result-amount">50만福✨</h1>
+                <p id="resultMessage" class="result-message">새해부터 가문 위상 상승했습니다<br>정말 감사합니다 🙇‍♀️🔥</p>
             </div>
             <div class="button-group">
-                <button id="shareBtn" class="btn-secondary">친구에게 공유하기 📤</button>
-                <button id="retryBtn" class="btn-primary">다시 돌리기 🔄</button>
+                <button id="saveBtn" class="btn-action">저장하기</button>
+                <button id="shareBtn" class="btn-action">공유하기</button>
+                <button id="retryBtn" class="btn-retry">한번 더!</button>
             </div>
         </div>
-
-        <!-- 푸터 -->
-        <footer class="footer">
-            <p>Made with ❤️ for 설날</p>
-        </footer>
     </div>
 
     <script src="script.js"></script>
