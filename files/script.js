@@ -18,9 +18,9 @@ const prizes = [
     { amount: 5000, weight: 30, message: '이것도 사랑입니다 ❤️' },
     { amount: 10000, weight: 25, message: '뭐라도 챙겨먹어요 🍜' },
     { amount: 30000, weight: 20, message: '헐 대박!! 🎉' },
-    { amount: 50000, weight: 15, message: '어르신 복 많이 받으세요 🙏' },
+    { amount: 50000, weight: 15, message: '새해 복 많이 받으세요 🙇🙏' },
     { amount: 100000, weight: 8, message: '!!!잭팟!!! 💰💰💰' },
-    { amount: 500000, weight: 2, message: '🚨 전설의 50만원 🚨\n이거 보여주고 안 주시면...' }
+    { amount: 500000, weight: 2, message: '🚨 전설의 50만 福✨ 🚨\n이거 보여주고 안 주시면...' }
 ];
 
 // 금액 인덱스 (룰렛 순서와 매칭)
@@ -90,13 +90,13 @@ function spinRoulette() {
 // 결과 표시
 function showResult(winner) {
     // 금액 포맷팅
-    resultAmount.textContent = winner.amount.toLocaleString() + '원';
+    resultAmount.textContent = winner.amount.toLocaleString() + '福✨';
     resultMessage.textContent = winner.message;
     
     // Amplitude: 결과 조회
     sendEvent('result_view', {
         amount: winner.amount,
-        amount_formatted: winner.amount.toLocaleString() + '원'
+        amount_formatted: winner.amount.toLocaleString() + '福✨'
     });
     
     // 화면 전환
