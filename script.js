@@ -114,10 +114,15 @@ function showResult(winner) {
 
 // 저장
 function saveResult() {
+    const reactionTime = sessionData.resultViewTime 
+        ? Math.round((Date.now() - sessionData.resultViewTime) / 1000) 
+        : 0;
+    
     alert('결과 화면을 캡처해서 저장해주세요! 📸');
     
     sendEvent('save_click', {
         prize_amount: sessionData.currentPrize,
+        reaction_time: reactionTime,
         spin_number: sessionData.spinCount
     });
 }
