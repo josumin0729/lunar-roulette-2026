@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+}
+
+/* 화면 전환 */
+.screen {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 시작 화면 */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.desc {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #718096;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* 버튼 */
+.btn-primary {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #667eea;
+    background: white;
+    border: 2px solid #667eea;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 12px;
+}
+
+.btn-secondary:hover {
+    background: #f7fafc;
+    transform: translateY(-2px);
+}
+
+/* 룰렛 화면 */
+.roulette-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.roulette-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+.roulette {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+.slice {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 50% 0%, 100% 0%);
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.slice span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transform: rotate(30deg);
+}
+
+/* 6개 섹터 각도 및 색상 */
+.slice-1 {
+    transform: rotate(0deg);
+    background: #ff6b6b;
+}
+
+.slice-2 {
+    transform: rotate(60deg);
+    background: #feca57;
+}
+
+.slice-3 {
+    transform: rotate(120deg);
+    background: #48dbfb;
+}
+
+.slice-4 {
+    transform: rotate(180deg);
+    background: #1dd1a1;
+}
+
+.slice-5 {
+    transform: rotate(240deg);
+    background: #ee5a6f;
+}
+
+.slice-6 {
+    transform: rotate(300deg);
+    background: #f368e0;
+}
+
+.pointer {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #2d3748;
+    z-index: 10;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.spinning-text {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #667eea;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* 결과 화면 */
+.result-box {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.result-label {
+    font-size: 1.1rem;
+    color: #718096;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.result-amount {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+    animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.result-message {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+}
+
+.result-sub {
+    font-size: 0.95rem;
+    color: #a0aec0;
+    font-weight: 500;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 푸터 */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .roulette-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .result-amount {
+        font-size: 2.8rem;
+    }
+}
