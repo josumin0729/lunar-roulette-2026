@@ -79,9 +79,6 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .slice span {
@@ -93,82 +90,160 @@ body {
     background: rgba(255, 255, 255, 0.9);
     padding: 5px 12px;
     border-radius: 6px;
-    top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50%;
 }
 
-/* 6개 섹터 - clip-path로 정확하게 */
+/* 6개 섹터 - 정확한 원형 60도씩 */
 .slice-1 {
-    clip-path: polygon(50% 50%, 50% 0%, 93.3% 25%);
+    clip-path: polygon(
+        50% 50%, 
+        50% 0%, 
+        93.3% 25%, 
+        93.3% 25%
+    );
     background: #D6F5F5;
-    border: 2px solid #2D3748;
+}
+
+.slice-1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 50%;
+    background: #2D3748;
+    transform-origin: bottom;
+    transform: rotate(30deg);
 }
 
 .slice-1 span {
-    transform: translate(-50%, -50%) rotate(30deg);
-    left: 65%;
-    top: 25%;
+    transform: translate(-50%, -120px) rotate(30deg);
 }
 
 .slice-2 {
-    clip-path: polygon(50% 50%, 93.3% 25%, 93.3% 75%);
+    clip-path: polygon(
+        50% 50%,
+        93.3% 25%,
+        93.3% 75%
+    );
     background: #FFD6E8;
-    border: 2px solid #2D3748;
+}
+
+.slice-2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 50%;
+    background: #2D3748;
+    transform-origin: bottom;
+    transform: rotate(90deg);
 }
 
 .slice-2 span {
-    transform: translate(-50%, -50%) rotate(90deg);
-    left: 75%;
-    top: 50%;
+    transform: translate(80px, -50%) rotate(90deg);
 }
 
 .slice-3 {
-    clip-path: polygon(50% 50%, 93.3% 75%, 50% 100%);
+    clip-path: polygon(
+        50% 50%,
+        93.3% 75%,
+        50% 100%
+    );
     background: #D6F5F5;
-    border: 2px solid #2D3748;
+}
+
+.slice-3::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 50%;
+    background: #2D3748;
+    transform-origin: bottom;
+    transform: rotate(150deg);
 }
 
 .slice-3 span {
-    transform: translate(-50%, -50%) rotate(150deg);
-    left: 65%;
-    top: 75%;
+    transform: translate(-50%, 80px) rotate(150deg);
 }
 
 .slice-4 {
-    clip-path: polygon(50% 50%, 50% 100%, 6.7% 75%);
+    clip-path: polygon(
+        50% 50%,
+        50% 100%,
+        6.7% 75%
+    );
     background: #FFD6E8;
-    border: 2px solid #2D3748;
+}
+
+.slice-4::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 50%;
+    background: #2D3748;
+    transform-origin: bottom;
+    transform: rotate(210deg);
 }
 
 .slice-4 span {
-    transform: translate(-50%, -50%) rotate(210deg);
-    left: 35%;
-    top: 75%;
+    transform: translate(-50%, 80px) rotate(210deg);
 }
 
 .slice-5 {
-    clip-path: polygon(50% 50%, 6.7% 75%, 6.7% 25%);
+    clip-path: polygon(
+        50% 50%,
+        6.7% 75%,
+        6.7% 25%
+    );
     background: #D6F5F5;
-    border: 2px solid #2D3748;
+}
+
+.slice-5::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 50%;
+    background: #2D3748;
+    transform-origin: bottom;
+    transform: rotate(270deg);
 }
 
 .slice-5 span {
-    transform: translate(-50%, -50%) rotate(270deg);
-    left: 25%;
-    top: 50%;
+    transform: translate(-120px, -50%) rotate(270deg);
 }
 
 .slice-6 {
-    clip-path: polygon(50% 50%, 6.7% 25%, 50% 0%);
+    clip-path: polygon(
+        50% 50%,
+        6.7% 25%,
+        50% 0%
+    );
     background: #FFD6E8;
-    border: 2px solid #2D3748;
+}
+
+.slice-6::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 50%;
+    background: #2D3748;
+    transform-origin: bottom;
+    transform: rotate(330deg);
 }
 
 .slice-6 span {
-    transform: translate(-50%, -50%) rotate(330deg);
-    left: 35%;
-    top: 25%;
+    transform: translate(-50%, -120px) rotate(330deg);
 }
 
 .pointer {
@@ -181,6 +256,7 @@ body {
     z-index: 10;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
+
 
 /* 돌리기 버튼 */
 .btn-spin {
