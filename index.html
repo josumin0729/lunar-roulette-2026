@@ -8,28 +8,20 @@
     <link rel="stylesheet" href="style.css">
     
     <!-- Amplitude Analytics -->
-    <!-- 여기에 Amplitude API Key 넣으세요 -->
+      
+    <!-- Amplitude Analytics (최신 버전) -->
     <script type="text/javascript">
-        (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
-        ;r.type="text/javascript"
-        ;r.integrity="sha384-+EO59vL/X7v6VE2s6/F4HxfHlK0nDUVWKVg8K9oUlvffAeeaShVBmbORTC2D3UF+"
-        ;r.crossOrigin="anonymous";r.async=true
-        ;r.src="https://cdn.amplitude.com/libs/analytics-browser-2.3.8-min.js.gz"
-        ;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
-        console.log("[Amplitude] Error: could not load SDK")}};var s=t.getElementsByTagName("script")[0]
-        ;s.parentNode.insertBefore(r,s);function i(e,t){e.prototype[t]=function(){
-        this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)});return this}}
-        var o=function(){this._q=[];return this};var a=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"]
-        ;for(var c=0;c<a.length;c++){i(o,a[c])}n.Identify=o;var l=function(){this._q=[]
-        ;return this};var u=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"]
-        ;for(var p=0;p<u.length;p++){i(l,u[p])}n.Revenue=l;var d=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"]
-        ;function v(e){function t(t){e[t]=function(){e._q.push({name:t,args:Array.prototype.slice.call(arguments,0)})}}
-        for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){e=(
-        !e||e.length===0?"$default_instance":e).toLowerCase();if(!Object.prototype.hasOwnProperty.call(n._iq,e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
-        ;e.amplitude=n})(window,document);
+        !function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{r.invoked=!0;var n=t.createElement("script");n.type="text/javascript",n.integrity="sha384-x0895mPlngKeVz8CmWcDNevY8JCIcHjrtVvkLF8VhXbKcXz1YXa+aCWpKLvhd5Qs",n.crossOrigin="anonymous",n.async=!0,n.src="https://cdn.amplitude.com/libs/analytics-browser-2.11.0-min.js.gz",n.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var s=t.getElementsByTagName("script")[0];s.parentNode.insertBefore(n,s);for(var o=function(){return this._q=[],this},i=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],a=0;a<i.length;a++)o.prototype[i[a]]=function(e){return function(){return this._q.push({name:e,args:Array.prototype.slice.call(arguments,0)}),this}}(i[a]);r.Identify=o;var c=function(){return this._q=[],this},u=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"];for(a=0;a<u.length;a++)c.prototype[u[a]]=function(e){return function(){return this._q.push({name:e,args:Array.prototype.slice.call(arguments,0)}),this}}(u[a]);r.Revenue=c;var l=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"];for(a=0;a<l.length;a++)!function(e){r[e]=function(){r._q.push({name:e,args:Array.prototype.slice.call(arguments,0)})}}(l[a]);r.getInstance=function(e){return e=(e&&0!==e.length?e:"$default_instance").toLowerCase(),Object.prototype.hasOwnProperty.call(r._iq,e)||(r._iq[e]={_q:[]},function(e){for(var t=0;t<l.length;t++)!function(t){e[t]=function(){e._q.push({name:t,args:Array.prototype.slice.call(arguments,0)})}}(l[t])}(r._iq[e])),r._iq[e]},e.amplitude=r}}(window,document);
 
-        // Amplitude 초기화 - API Key는 아래에 입력
-        amplitude.init('YOUR_AMPLITUDE_API_KEY');
+        // Amplitude 초기화 - API Key 입력하세요!
+        amplitude.init('YOUR_AMPLITUDE_API_KEY', {
+            defaultTracking: {
+                sessions: true,
+                pageViews: false,
+                formInteractions: false,
+                fileDownloads: false
+            }
+        });
     </script>
 </head>
 <body>
