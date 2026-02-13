@@ -61,9 +61,16 @@ function weightedRandom() {
 }
 
 // 룰렛 돌리기
+// 룰렛 돌리기
 function spinRoulette() {
     spinBtn.disabled = true;
     resultArea.classList.add('hidden');
+    
+    // 🔥 회전 리셋 (중요!)
+    roulette.style.transition = 'none';
+    roulette.style.transform = 'rotate(0deg)';
+    void roulette.offsetHeight; // 리플로우 강제
+    roulette.style.transition = 'transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99)';
     
     const clickTime = Date.now();
     const timeToClick = Math.round((clickTime - sessionData.pageLoadTime) / 1000);
@@ -90,14 +97,16 @@ function spinRoulette() {
     const spins = 5;
     const finalRotation = (360 * spins) + (360 - targetDegree);
     
-    roulette.style.transform = `rotate(${finalRotation}deg)`;
+    // 약간의 딜레이 후 회전 (리셋 후 회전)
+    setTimeout(() => {
+        roulette.style.transform = `rotate(${finalRotation}deg)`;
+    }, 50);
     
     setTimeout(() => {
         showResult(winner);
         spinBtn.disabled = false;
-    }, 3000);
+    }, 3050);
 }
-
 // 결과 표시
 function showResult(winner) {
     resultAmount.textContent = winner.amount;
