@@ -57,7 +57,6 @@ body {
 }
 
 /* 룰렛 */
-/* 룰렛 */
 .roulette-wrapper {
     position: relative;
     width: 340px;
@@ -69,149 +68,10 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    position: relative;
-    background: white;
     border: 4px solid #2D3748;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
-}
-
-.slice {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(50% 50%, 50% 0, 75% 6.7%, 93.3% 25%, 100% 50%);
-}
-
-.slice span {
-    position: absolute;
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: #2D3748;
-    white-space: nowrap;
-    text-shadow: 
-        0 0 4px white,
-        0 0 8px white,
-        0 0 12px white;
-    left: 50%;
-    top: 50%;
-}
-
-/* 6개 섹터 - 회전만 다르게 */
-.slice-1 {
-    transform: rotate(0deg);
-    background: #D6F5F5;
-}
-
-.slice-1::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 50%;
-    background: #2D3748;
-    left: 50%;
-    top: 0;
-    transform-origin: bottom center;
-}
-
-.slice-2 {
-    transform: rotate(60deg);
-    background: #FFD6E8;
-}
-
-.slice-2 span {
-    transform: translate(-50%, -50%) rotate(-30deg);
-}
-
-.slice-2::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 50%;
-    background: #2D3748;
-    left: 50%;
-    top: 0;
-    transform-origin: bottom center;
-}
-
-.slice-3 {
-    transform: rotate(120deg);
-    background: #D6F5F5;
-}
-
-.slice-3 span {
-    transform: translate(-50%, -50%) rotate(-90deg);
-}
-
-.slice-3::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 50%;
-    background: #2D3748;
-    left: 50%;
-    top: 0;
-    transform-origin: bottom center;
-}
-
-.slice-4 {
-    transform: rotate(180deg);
-    background: #FFD6E8;
-}
-
-.slice-4 span {
-    transform: translate(-50%, -50%) rotate(-150deg);
-}
-
-.slice-4::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 50%;
-    background: #2D3748;
-    left: 50%;
-    top: 0;
-    transform-origin: bottom center;
-}
-
-.slice-5 {
-    transform: rotate(240deg);
-    background: #D6F5F5;
-}
-
-.slice-5 span {
-    transform: translate(-50%, -50%) rotate(-210deg);
-}
-
-.slice-5::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 50%;
-    background: #2D3748;
-    left: 50%;
-    top: 0;
-    transform-origin: bottom center;
-}
-
-.slice-6 {
-    transform: rotate(300deg);
-    background: #FFD6E8;
-}
-
-.slice-6 span {
-    transform: translate(-50%, -50%) rotate(-270deg);
-}
-
-.slice-6::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 50%;
-    background: #2D3748;
-    left: 50%;
-    top: 0;
-    transform-origin: bottom center;
+    background: white;
 }
 
 .pointer {
@@ -331,6 +191,20 @@ body {
     transform: translateY(-2px);
 }
 
+/* 면책 문구 */
+.disclaimer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px;
+}
+
+.disclaimer p {
+    font-size: 0.75rem;
+    color: #A0AEC0;
+    line-height: 1.5;
+    margin: 0;
+}
+
 /* 반응형 */
 @media (max-width: 480px) {
     .title {
@@ -357,18 +231,4 @@ body {
     .result-box {
         padding: 40px 24px;
     }
-
-    /* 면책 문구 */
-.disclaimer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 12px;
-}
-
-.disclaimer p {
-    font-size: 0.75rem;
-    color: #A0AEC0;
-    line-height: 1.5;
-    margin: 0;
-}
 }
