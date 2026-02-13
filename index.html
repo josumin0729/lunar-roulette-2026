@@ -33,89 +33,87 @@
             <p class="sub-desc">친척어른께 보여드리세요!</p>
         </div>
 
-        <!-- 룰렛 -->
-    <!-- 룰렛 -->
-<div class="roulette-wrapper">
-    <svg id="roulette" class="roulette" viewBox="0 0 400 400">
-        <!-- 섹터 1: 5천 (민트) -->
-        <path d="M 200 200 L 200 0 A 200 200 0 0 1 373.2 100 Z" 
-              fill="#D6F5F5" 
-              stroke="#2D3748" 
-              stroke-width="2"/>
-        <text x="280" y="90" 
-              font-size="20" 
-              font-weight="800" 
-              fill="#2D3748" 
-              text-anchor="middle"
-              transform="rotate(30 280 90)">5천福</text>
-        
-        <!-- 섹터 2: 1만 (핑크) -->
-        <path d="M 200 200 L 373.2 100 A 200 200 0 0 1 373.2 300 Z" 
-              fill="#FFD6E8" 
-              stroke="#2D3748" 
-              stroke-width="2"/>
-        <text x="340" y="200" 
-              font-size="20" 
-              font-weight="800" 
-              fill="#2D3748" 
-              text-anchor="middle"
-              transform="rotate(90 340 200)">1만福</text>
-        
-        <!-- 섹터 3: 3만 (민트) -->
-        <path d="M 200 200 L 373.2 300 A 200 200 0 0 1 200 400 Z" 
-              fill="#D6F5F5" 
-              stroke="#2D3748" 
-              stroke-width="2"/>
-        <text x="280" y="310" 
-              font-size="20" 
-              font-weight="800" 
-              fill="#2D3748" 
-              text-anchor="middle"
-              transform="rotate(150 280 310)">3만福</text>
-        
-        <!-- 섹터 4: 5만 (핑크) -->
-        <path d="M 200 200 L 200 400 A 200 200 0 0 1 26.8 300 Z" 
-              fill="#FFD6E8" 
-              stroke="#2D3748" 
-              stroke-width="2"/>
-        <text x="120" y="310" 
-              font-size="20" 
-              font-weight="800" 
-              fill="#2D3748" 
-              text-anchor="middle"
-              transform="rotate(210 120 310)">5만福</text>
-        
-        <!-- 섹터 5: 10만 (민트) -->
-        <path d="M 200 200 L 26.8 300 A 200 200 0 0 1 26.8 100 Z" 
-              fill="#D6F5F5" 
-              stroke="#2D3748" 
-              stroke-width="2"/>
-        <text x="60" y="200" 
-              font-size="20" 
-              font-weight="800" 
-              fill="#2D3748" 
-              text-anchor="middle"
-              transform="rotate(270 60 200)">10만福</text>
-        
-        <!-- 섹터 6: 50만 (핑크) -->
-        <path d="M 200 200 L 26.8 100 A 200 200 0 0 1 200 0 Z" 
-              fill="#FFD6E8" 
-              stroke="#2D3748" 
-              stroke-width="2"/>
-        <text x="120" y="90" 
-              font-size="20" 
-              font-weight="800" 
-              fill="#2D3748" 
-              text-anchor="middle"
-              transform="rotate(330 120 90)">50만福</text>
-        
-        <!-- 중앙 원 -->
-        <circle cx="200" cy="200" r="20" fill="white" stroke="#2D3748" stroke-width="2"/>
-    </svg>
-    <div class="pointer">▼</div>
-</div>
+        <!-- 룰렛 (SVG) -->
+        <div class="roulette-wrapper">
+            <svg id="roulette" class="roulette" viewBox="0 0 400 400">
+                <!-- 섹터 1: 5천 (민트) -->
+                <path d="M 200 200 L 200 0 A 200 200 0 0 1 373.2 100 Z" 
+                      fill="#D6F5F5" 
+                      stroke="#2D3748" 
+                      stroke-width="3"/>
+                <text x="270" y="80" 
+                      font-size="26" 
+                      font-weight="800" 
+                      fill="#2D3748" 
+                      text-anchor="middle"
+                      transform="rotate(30 270 80)">5천福</text>
+                
+                <!-- 섹터 2: 1만 (핑크) -->
+                <path d="M 200 200 L 373.2 100 A 200 200 0 0 1 373.2 300 Z" 
+                      fill="#FFD6E8" 
+                      stroke="#2D3748" 
+                      stroke-width="3"/>
+                <text x="330" y="200" 
+                      font-size="26" 
+                      font-weight="800" 
+                      fill="#2D3748" 
+                      text-anchor="middle"
+                      transform="rotate(90 330 200)">1만福</text>
+                
+                <!-- 섹터 3: 3만 (민트) -->
+                <path d="M 200 200 L 373.2 300 A 200 200 0 0 1 200 400 Z" 
+                      fill="#D6F5F5" 
+                      stroke="#2D3748" 
+                      stroke-width="3"/>
+                <text x="270" y="320" 
+                      font-size="26" 
+                      font-weight="800" 
+                      fill="#2D3748" 
+                      text-anchor="middle"
+                      transform="rotate(150 270 320)">3만福</text>
+                
+                <!-- 섹터 4: 5만 (핑크) -->
+                <path d="M 200 200 L 200 400 A 200 200 0 0 1 26.8 300 Z" 
+                      fill="#FFD6E8" 
+                      stroke="#2D3748" 
+                      stroke-width="3"/>
+                <text x="130" y="320" 
+                      font-size="26" 
+                      font-weight="800" 
+                      fill="#2D3748" 
+                      text-anchor="middle"
+                      transform="rotate(210 130 320)">5만福</text>
+                
+                <!-- 섹터 5: 10만 (민트) -->
+                <path d="M 200 200 L 26.8 300 A 200 200 0 0 1 26.8 100 Z" 
+                      fill="#D6F5F5" 
+                      stroke="#2D3748" 
+                      stroke-width="3"/>
+                <text x="70" y="200" 
+                      font-size="26" 
+                      font-weight="800" 
+                      fill="#2D3748" 
+                      text-anchor="middle"
+                      transform="rotate(270 70 200)">10만福</text>
+                
+                <!-- 섹터 6: 50만 (핑크) -->
+                <path d="M 200 200 L 26.8 100 A 200 200 0 0 1 200 0 Z" 
+                      fill="#FFD6E8" 
+                      stroke="#2D3748" 
+                      stroke-width="3"/>
+                <text x="130" y="80" 
+                      font-size="26" 
+                      font-weight="800" 
+                      fill="#2D3748" 
+                      text-anchor="middle"
+                      transform="rotate(330 130 80)">50만福</text>
+                
+                <!-- 중앙 원 -->
+                <circle cx="200" cy="200" r="25" fill="white" stroke="#2D3748" stroke-width="3"/>
+            </svg>
+            <div class="pointer">▼</div>
+        </div>
 
-        
         <!-- 돌리기 버튼 -->
         <button id="spinBtn" class="btn-spin">돌리기 🎰</button>
 
@@ -127,12 +125,11 @@
             </div>
             <div class="button-group">
                 <button id="saveBtn" class="btn-save">저장</button>
-                <button id="shareBtn" class="btn-share">공유</button>
+                <button id="shareBtn" class="btn-share">공유 📤</button>
             </div>
         </div>
-    </div>
 
-      <!-- 면책 문구 -->
+        <!-- 면책 문구 -->
         <div class="disclaimer">
             <p>재미를 위한 시뮬레이션입니다.</p>
             <p>실제 현금을 지급하지 않습니다.</p>
