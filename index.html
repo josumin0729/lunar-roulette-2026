@@ -9,11 +9,10 @@
     <!-- SUIT 폰트 -->
     <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
     
-    <!-- Amplitude Analytics (최신 버전) -->
+    <!-- Amplitude Analytics -->
     <script type="text/javascript">
         !function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{r.invoked=!0;var n=t.createElement("script");n.type="text/javascript",n.integrity="sha384-x0895mPlngKeVz8CmWcDNevY8JCIcHjrtVvkLF8VhXbKcXz1YXa+aCWpKLvhd5Qs",n.crossOrigin="anonymous",n.async=!0,n.src="https://cdn.amplitude.com/libs/analytics-browser-2.11.0-min.js.gz",n.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var s=t.getElementsByTagName("script")[0];s.parentNode.insertBefore(n,s);for(var o=function(){return this._q=[],this},i=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],a=0;a<i.length;a++)o.prototype[i[a]]=function(e){return function(){return this._q.push({name:e,args:Array.prototype.slice.call(arguments,0)}),this}}(i[a]);r.Identify=o;var c=function(){return this._q=[],this},u=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"];for(a=0;a<u.length;a++)c.prototype[u[a]]=function(e){return function(){return this._q.push({name:e,args:Array.prototype.slice.call(arguments,0)}),this}}(u[a]);r.Revenue=c;var l=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"];for(a=0;a<l.length;a++)!function(e){r[e]=function(){r._q.push({name:e,args:Array.prototype.slice.call(arguments,0)})}}(l[a]);r.getInstance=function(e){return e=(e&&0!==e.length?e:"$default_instance").toLowerCase(),Object.prototype.hasOwnProperty.call(r._iq,e)||(r._iq[e]={_q:[]},function(e){for(var t=0;t<l.length;t++)!function(t){e[t]=function(){e._q.push({name:t,args:Array.prototype.slice.call(arguments,0)})}}(l[t])}(r._iq[e])),r._iq[e]},e.amplitude=r}}(window,document);
 
-        // Amplitude 초기화 - API Key 입력하세요!
         amplitude.init('YOUR_AMPLITUDE_API_KEY', {
             defaultTracking: {
                 sessions: true,
@@ -28,9 +27,10 @@
     <div class="container">
         <!-- 상단 타이틀 -->
         <div class="header">
-            <h1 class="title">2026 설날 🧧</h1>
-            <h2 class="subtitle">세뱃돈 룰렛</h2>
-            <p class="desc">올해 받을 세뱃돈은 얼마? <br> 친척어른께 보여드리세요!</p>
+            <p class="year">2026 설날 🧧</p>
+            <h1 class="title">세뱃돈 룰렛</h1>
+            <p class="desc">올해 받을 세뱃돈은 얼마?</p>
+            <p class="sub-desc">친척어른께 보여드리세요!</p>
         </div>
 
         <!-- 룰렛 -->
@@ -61,16 +61,15 @@
         <!-- 돌리기 버튼 -->
         <button id="spinBtn" class="btn-spin">돌리기 🎰</button>
 
-        <!-- 결과 영역 (처음엔 숨김) -->
+        <!-- 결과 영역 -->
         <div id="resultArea" class="result-area hidden">
             <div class="result-box">
                 <h1 id="resultAmount" class="result-amount">50만福✨</h1>
                 <p id="resultMessage" class="result-message">새해부터 가문 위상 상승했습니다<br>정말 감사합니다 🙇‍♀️🔥</p>
             </div>
             <div class="button-group">
-                <button id="saveBtn" class="btn-action">저장하기</button>
-                <button id="shareBtn" class="btn-action">공유하기</button>
-                <button id="retryBtn" class="btn-retry">한번 더!</button>
+                <button id="saveBtn" class="btn-save">저장</button>
+                <button id="shareBtn" class="btn-share">공유</button>
             </div>
         </div>
     </div>
