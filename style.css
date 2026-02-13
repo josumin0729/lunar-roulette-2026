@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +5,8 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'SUIT', sans-serif;
+    background: #F7F9FC;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -18,118 +17,42 @@ body {
 .container {
     max-width: 500px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* 화면 전환 */
-.screen {
-    background: white;
-    border-radius: 24px;
-    padding: 40px 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    display: none;
-    animation: fadeIn 0.3s ease;
-}
-
-.screen.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* 시작 화면 */
+/* 헤더 */
 .header {
     text-align: center;
     margin-bottom: 30px;
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #2D3748;
     margin-bottom: 8px;
 }
 
 .subtitle {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #2d3748;
-}
-
-.desc {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #718096;
-    line-height: 1.6;
-    margin-bottom: 40px;
-}
-
-/* 버튼 */
-.btn-primary {
-    width: 100%;
-    padding: 18px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: white;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-}
-
-.btn-primary:active {
-    transform: translateY(0);
-}
-
-.btn-secondary {
-    width: 100%;
-    padding: 16px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #667eea;
-    background: white;
-    border: 2px solid #667eea;
-    border-radius: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    color: #2D3748;
     margin-bottom: 12px;
 }
 
-.btn-secondary:hover {
-    background: #f7fafc;
-    transform: translateY(-2px);
+.desc {
+    font-size: 1rem;
+    color: #718096;
+    font-weight: 500;
 }
 
-/* 룰렛 화면 */
-.roulette-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-}
-
+/* 룰렛 */
 .roulette-wrapper {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
     margin-bottom: 30px;
 }
 
@@ -139,7 +62,8 @@ body {
     border-radius: 50%;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    border: 4px solid #2D3748;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
 }
 
@@ -151,148 +75,168 @@ body {
     display: flex;
     align-items: start;
     justify-content: center;
-    padding-top: 40px;
+    padding-top: 50px;
+    border-right: 2px solid #2D3748;
 }
 
 .slice span {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 700;
-    color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #2D3748;
     transform: rotate(30deg);
+    white-space: nowrap;
 }
 
-/* 6개 섹터 각도 및 색상 */
+/* 2색 번갈아가며 */
 .slice-1 {
     transform: rotate(0deg);
-    background: #ff6b6b;
+    background: #D6F5F5; /* 민트 */
 }
 
 .slice-2 {
     transform: rotate(60deg);
-    background: #feca57;
+    background: #FFD6E8; /* 연핑크 */
 }
 
 .slice-3 {
     transform: rotate(120deg);
-    background: #48dbfb;
+    background: #D6F5F5;
 }
 
 .slice-4 {
     transform: rotate(180deg);
-    background: #1dd1a1;
+    background: #FFD6E8;
 }
 
 .slice-5 {
     transform: rotate(240deg);
-    background: #ee5a6f;
+    background: #D6F5F5;
 }
 
 .slice-6 {
     transform: rotate(300deg);
-    background: #f368e0;
+    background: #FFD6E8;
 }
 
 .pointer {
     position: absolute;
-    top: -15px;
+    top: -20px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2rem;
-    color: #2d3748;
+    font-size: 2.5rem;
+    color: #2D3748;
     z-index: 10;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
-.spinning-text {
-    text-align: center;
+/* 돌리기 버튼 */
+.btn-spin {
+    width: 100%;
+    max-width: 320px;
+    padding: 18px;
     font-size: 1.3rem;
-    font-weight: 600;
-    color: #667eea;
-    animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
-
-/* 결과 화면 */
-.result-box {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-    border-radius: 20px;
+    font-weight: 700;
+    color: white;
+    background: #2D3748;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
     margin-bottom: 30px;
 }
 
-.result-label {
-    font-size: 1.1rem;
-    color: #718096;
-    margin-bottom: 12px;
-    font-weight: 500;
+.btn-spin:hover {
+    background: #1A202C;
+    transform: translateY(-2px);
 }
 
-.result-amount {
-    font-size: 3.5rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 16px;
-    animation: scaleIn 0.5s ease;
+.btn-spin:active {
+    transform: translateY(0);
 }
 
-@keyframes scaleIn {
-    from {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+.btn-spin:disabled {
+    background: #A0AEC0;
+    cursor: not-allowed;
 }
 
-.result-message {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #2d3748;
+/* 결과 영역 */
+.result-area {
+    width: 100%;
+    max-width: 320px;
+}
+
+.result-area.hidden {
+    display: none;
+}
+
+.result-box {
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+    border: 3px solid #2D3748;
+    border-radius: 16px;
     margin-bottom: 20px;
 }
 
-.result-sub {
-    font-size: 0.95rem;
-    color: #a0aec0;
-    font-weight: 500;
+.result-amount {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #2D3748;
+    margin-bottom: 20px;
 }
 
+.result-message {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4A5568;
+    line-height: 1.6;
+}
+
+/* 버튼 그룹 */
 .button-group {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
-/* 푸터 */
-.footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
+.btn-action {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2D3748;
+    background: white;
+    border: 2px solid #2D3748;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.footer p {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+.btn-action:hover {
+    background: #F7F9FC;
+}
+
+.btn-retry {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    background: #2D3748;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-retry:hover {
+    background: #1A202C;
 }
 
 /* 반응형 */
 @media (max-width: 480px) {
     .title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .subtitle {
@@ -300,11 +244,11 @@ body {
     }
     
     .roulette-wrapper {
-        width: 250px;
-        height: 250px;
+        width: 280px;
+        height: 280px;
     }
     
     .result-amount {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
 }
