@@ -4,18 +4,16 @@ const roulette = document.getElementById('roulette');
 const resultArea = document.getElementById('resultArea');
 const resultAmount = document.getElementById('resultAmount');
 const resultMessage = document.getElementById('resultMessage');
-const saveBtn = document.getElementById('saveBtn');
 const shareBtn = document.getElementById('shareBtn');
 
 // 금액별 확률 설정
-
 const prizes = [
     { amount: '5천福', weight: 30, message: '새해 스타트 버프 획득 ✨' },
     { amount: '1만福', weight: 25, message: '새해 행운 포인트 적립 완료 💰' },
     { amount: '3만福', weight: 20, message: '새해 난이도 이지 모드 확정 🎮' },
-    { amount: '5만福', weight: 15, message: '새해부터 인생 난이도 내려간 느낌입니다\n감사합니다 😄' },
-    { amount: '10만福', weight: 8, message: '새해 시작하자마자\n인생 그래프 급상승했습니다\n감사합니다 📈' },
-    { amount: '50만福', weight: 2, message: '새해부터 가문 위상 상승했습니다\n정말 감사합니다 🙇‍♀️🔥' }
+    { amount: '5만福', weight: 15, message: '새해부터 인생 난이도가 내려갔어요!\n감사합니다 😄' },
+    { amount: '10만福', weight: 8, message: '새해 복이 상위 1% 구간이네요 \n감사합니다 😆' },
+    { amount: '50만福', weight: 2, message: '새해부터 가문 위상 상승🎊⬆️\n정말 감사합니다 🙇‍♀️' }
 ];
 
 const sliceMapping = ['5천福', '1만福', '3만福', '5만福', '10만福', '50만福'];
@@ -61,7 +59,6 @@ function weightedRandom() {
 }
 
 // 룰렛 돌리기
-// 룰렛 돌리기
 function spinRoulette() {
     spinBtn.disabled = true;
     resultArea.classList.add('hidden');
@@ -89,7 +86,7 @@ function spinRoulette() {
     const degreesPerSlice = 360 / 6;
     const targetDegree = sliceIndex * degreesPerSlice + (degreesPerSlice / 2);
     
-    // 🔥 매번 새로운 회전값 계산 (누적 방지)
+    // 매번 새로운 회전값 계산 (누적)
     const spins = 5;
     const totalRotation = (360 * spins) + (360 - targetDegree) + (360 * sessionData.spinCount * 10);
     
@@ -100,6 +97,7 @@ function spinRoulette() {
         spinBtn.disabled = false;
     }, 3000);
 }
+
 // 결과 표시
 function showResult(winner) {
     resultAmount.textContent = winner.amount;
@@ -115,22 +113,7 @@ function showResult(winner) {
     resultArea.classList.remove('hidden');
 }
 
-// 저장
-function saveResult() {
-    const reactionTime = sessionData.resultViewTime 
-        ? Math.round((Date.now() - sessionData.resultViewTime) / 1000) 
-        : 0;
-    
-    alert('결과 화면을 캡처해서 저장해주세요! 📸');
-    
-    sendEvent('save_click', {
-        prize_amount: sessionData.currentPrize,
-        reaction_time: reactionTime,
-        spin_number: sessionData.spinCount
-    });
-}
-
-// 공유
+// 공유하기
 function shareResult() {
     const reactionTime = sessionData.resultViewTime 
         ? Math.round((Date.now() - sessionData.resultViewTime) / 1000) 
@@ -159,7 +142,6 @@ function shareResult() {
 
 // 이벤트 리스너
 spinBtn.addEventListener('click', spinRoulette);
-saveBtn.addEventListener('click', saveResult);
 shareBtn.addEventListener('click', shareResult);
 
 // 페이지 로드
