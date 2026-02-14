@@ -109,6 +109,7 @@ function showResult(winner) {
     resultArea.classList.remove('hidden');
 }
 
+
 // 공유하기
 function shareResult() {
     const reactionTime = sessionData.resultViewTime 
@@ -116,13 +117,16 @@ function shareResult() {
         : 0;
     
     const currentUrl = window.location.href.split('?')[0];
-    const shareUrl = currentUrl + '?utm_source=share&utm_medium=organic&utm_campaign=lunar_new_year_2026';
+    
+    // utm_content 추가: 공유 플랫폼 구분용
+    const shareUrl = currentUrl + '?utm_source=share&utm_medium=organic&utm_campaign=lunar_new_year_2026&utm_content=link_copy';
     
     sendEvent('share_click', {
         share_platform: 'link_copy',
         prize_amount: sessionData.currentPrize,
         reaction_time: reactionTime,
-        spin_number: sessionData.spinCount
+        spin_number: sessionData.spinCount,
+        utm_content: 'link_copy'  // 추가!
     });
     
     if (navigator.clipboard) {
