@@ -119,7 +119,7 @@ function shareResult() {
     const currentUrl = window.location.href.split('?')[0];
     
     // utm_content 추가: 공유 플랫폼 구분용
-    const shareUrl = currentUrl + '?utm_source=share&utm_medium=organic&utm_campaign=lunar_new_year_2026&utm_content=link_copy';
+    const shareUrl = currentUrl + '?utm_source=share&utm_medium=organic&utm_campaign=lunar_new_year_2026&utm_term=link_copy';
     
     sendEvent('share_click', {
         share_platform: 'link_copy',
