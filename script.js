@@ -110,6 +110,7 @@ function showResult(winner) {
 }
 
 
+
 // 공유하기
 function shareResult() {
     const reactionTime = sessionData.resultViewTime 
@@ -118,15 +119,20 @@ function shareResult() {
     
     const currentUrl = window.location.href.split('?')[0];
     
-    // utm_content 추가: 공유 플랫폼 구분용
-    const shareUrl = currentUrl + '?utm_source=share&utm_medium=organic&utm_campaign=lunar_new_year_2026&utm_term=link_copy';
+    // 현재 페이지의 utm_content 가져오기 (A안/B안 구분)
+    const urlParams = new URLSearchParams(window.location.search);
+    const originalContent = urlParams.get('utm_content') || 'organic';
+    
+    // A/B 소재 정보 유지하면서 공유 링크 생성
+    const shareUrl = currentUrl + `?utm_source=share&utm_medium=organic&utm_campaign=lunar_new_year_2026&utm_content=${originalContent}&utm_term=link_copy`;
     
     sendEvent('share_click', {
         share_platform: 'link_copy',
         prize_amount: sessionData.currentPrize,
         reaction_time: reactionTime,
         spin_number: sessionData.spinCount,
-        utm_term: 'link_copy'  // 추가!
+        utm_content: originalContent,  // 'social', 'curiosity', 또는 'organic'
+        utm_term: 'link_copy'
     });
     
     if (navigator.clipboard) {
