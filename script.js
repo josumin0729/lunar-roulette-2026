@@ -77,11 +77,6 @@ function spinRoulette() {
     const winner = weightedRandom();
     sessionData.currentPrize = winner.amount;
     
-    sendEvent('roulette_spin', {
-        spin_number: sessionData.spinCount,
-        prize_amount: winner.amount
-    });
-    
     const sliceIndex = sliceMapping.indexOf(winner.amount);
     const degreesPerSlice = 360 / 6;
     const targetDegree = sliceIndex * degreesPerSlice + (degreesPerSlice / 2);
