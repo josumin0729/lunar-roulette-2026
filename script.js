@@ -126,7 +126,7 @@ function shareResult() {
         prize_amount: sessionData.currentPrize,
         reaction_time: reactionTime,
         spin_number: sessionData.spinCount,
-        utm_content: 'link_copy'  // 추가!
+        utm_term: 'link_copy'  // 추가!
     });
     
     if (navigator.clipboard) {
