@@ -40,7 +40,8 @@ function getUtmParams() {
     return {
         utm_source: urlParams.get('utm_source') || 'direct',
         utm_medium: urlParams.get('utm_medium') || 'none',
-        utm_campaign: urlParams.get('utm_campaign') || 'none'
+        utm_campaign: urlParams.get('utm_campaign') || 'none',
+        utm_content: urlParams.get('utm_content') || 'none'
     };
 }
 
@@ -147,6 +148,7 @@ window.addEventListener('load', () => {
         utm_source: utmParams.utm_source,
         utm_medium: utmParams.utm_medium,
         utm_campaign: utmParams.utm_campaign,
+        utm_content: utmParams.utm_content,
         page_title: document.title,
         page_location: window.location.href,
         referrer: document.referrer || 'direct'
