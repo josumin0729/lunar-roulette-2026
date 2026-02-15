@@ -116,10 +116,10 @@ body {
 }
 
 .cta-text {
-    font-size: 1.2rem;
+    font-size: 1.qrem;
     color: #4A5568;
     font-weight: 700;
-    margin: 10px 0 25px 0;  
+    margin: 10px 0 20px 0;  
     text-align: center;
     animation: bounce 2s infinite;
 }
