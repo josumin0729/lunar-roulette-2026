@@ -115,6 +115,15 @@ body {
     cursor: not-allowed;
 }
 
+.cta-text {
+    font-size: 1rem;
+    color: #E53E3E;
+    font-weight: 700;
+    margin: 10px 0 30px 0;  
+    text-align: center;
+    animation: bounce 2s infinite;
+}
+
 /* 결과 영역 */
 .result-area {
     width: 100%;
