@@ -42,7 +42,7 @@ function getUtmParams() {
         utm_medium: urlParams.get('utm_medium') || 'none',
         utm_campaign: urlParams.get('utm_campaign') || 'none',
         utm_content: urlParams.get('utm_content') || 'none',
-        utm_term: urlParams.get('utm_term') || 'none
+        utm_term: urlParams.get('utm_term') || 'none'
     };
 }
 
