@@ -139,14 +139,10 @@ python -m http.server 8000
 
 <br>
 
-## 💬 피드백
-
-개선 아이디어나 다음 시즌 아이디어가 있으신가요?
-
 
 
 ## 📂 관련 링크
-📥[피드백 남기기](https://docs.google.com/forms/d/e/1FAIpQLSdtndkAyHAOxu8W3596eG4YEr4GFajUZuvhyv2q_2FsJ-OBRg/viewform)
+📥[피드백 남기기](https://docs.google.com/forms/d/e/1FAIpQLSdtndkAyHAOxu8W3596eG4YEr4GFajUZuvhyv2q_2FsJ-OBRg/viewform) <br>
 📜[전체 프로세스 문서화](https://pmjsm.notion.site/2026-30600597106e811597dddba067dfdef4)
 
 
